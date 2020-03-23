@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test
 
 @ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
-class VectorSpaceModelApplicationKtTest {
+class ConsineSimilarityKtTest {
 
     private val mainThreadSurrogate = newSingleThreadContext("The main thread")
 
