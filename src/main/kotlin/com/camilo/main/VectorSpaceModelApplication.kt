@@ -10,7 +10,7 @@ suspend fun main(args: Array<String>) = coroutineScope {
     val z = arrayOf(1, 3, 2)
 
     val cosineSimilarity = cosineSimilarity(y, z)
-    println("The value shoud be $cosineSimilarity")
+    println("The value is $cosineSimilarity")
 }
 
 suspend fun cosineSimilarity(y: Array<Int>, z: Array<Int>) = coroutineScope {
@@ -22,8 +22,9 @@ suspend fun cosineSimilarity(y: Array<Int>, z: Array<Int>) = coroutineScope {
 
 }
 
+
 suspend fun calculatingValue(y: Array<Int>, z: Array<Int>) = coroutineScope {
-    var sum = 0;
+    var sum = 0
     for ((index, value) in y.withIndex()) {
         val valueB = z[index]
         sum += (value * valueB)
@@ -32,8 +33,7 @@ suspend fun calculatingValue(y: Array<Int>, z: Array<Int>) = coroutineScope {
 }
 
 suspend fun calculoSqrt(y: Array<Int>) = coroutineScope {
-
-    var sum = 0.0;
+    var sum = 0.0
     for (i in y) {
         sum += Math.pow(i.toDouble(), 2.0)
     }
