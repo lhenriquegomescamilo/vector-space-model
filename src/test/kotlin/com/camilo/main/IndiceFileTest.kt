@@ -28,7 +28,7 @@ class IndiceFileTest {
 
 
     @Test
-    fun `must have file`() = runBlocking {
+    fun `should read words of file`() = runBlocking {
         val indiceFile = IndiceFileGenerator()
         val expectedWords = 5
         val file = readFile()
