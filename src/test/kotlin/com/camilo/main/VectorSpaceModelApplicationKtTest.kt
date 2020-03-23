@@ -31,7 +31,7 @@ class VectorSpaceModelApplicationKtTest {
         val y = arrayOf(2, 1, 3)
         val z = arrayOf(1, 3, 2)
 
-        val cosineSimilarityValue = cosineSimilarity(y, z)
+        val cosineSimilarityValue = CosineSimilarity.calculate(y, z)
         assertEquals(expected, cosineSimilarityValue)
 
     }
