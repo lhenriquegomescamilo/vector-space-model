@@ -26,7 +26,7 @@ class ConsineSimilarityKtTest {
     }
 
     @Test
-    fun `The csosine similaratiy should be same`() = runBlocking {
+    fun `The cosine similaratiy should be same`() = runBlocking {
         val expected = 0.7857142857142857
         val y = arrayOf(2, 1, 3)
         val z = arrayOf(1, 3, 2)
