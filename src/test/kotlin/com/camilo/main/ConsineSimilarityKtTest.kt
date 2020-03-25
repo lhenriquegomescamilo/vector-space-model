@@ -47,7 +47,7 @@ class ConsineSimilarityKtTest {
 
     @Test
     fun `The cosine similaratiy should be same in the three vectors with diferent size`() = runBlocking {
-        val expected = 0.2859431317947984
+        val expected = 0.4003203845127178
         val y = arrayOf(2, 1, 3)
         val z = arrayOf(1, 3, 2)
         val x = arrayOf(1, 3, 2, 5)
