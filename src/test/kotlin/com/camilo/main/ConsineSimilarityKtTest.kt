@@ -26,13 +26,32 @@ class ConsineSimilarityKtTest {
     }
 
     @Test
-    fun `The cosine similaratiy should be same`() = runBlocking {
+    fun `The cosine similaratiy should be same in the two vectors`() = runBlocking {
         val expected = 0.7857142857142857
         val y = arrayOf(2, 1, 3)
         val z = arrayOf(1, 3, 2)
-
-        val cosineSimilarityValue = CosineSimilarity.calculate(y, z)
+        val cosineSimilarityValue = CosineSimilarity.calculate(arrayOf(y, z))
         assertEquals(expected, cosineSimilarityValue)
 
+    }
+
+    @Test
+    fun `The cosine similaratiy should be same in the three vectors`() = runBlocking {
+        val expected = 0.4772522177007578
+        val y = arrayOf(2, 1, 3)
+        val z = arrayOf(1, 3, 2)
+        val x = arrayOf(1, 3, 2)
+        val cosineSimilarityValue = CosineSimilarity.calculate(arrayOf(y, z, x))
+        assertEquals(expected, cosineSimilarityValue)
+    }
+
+    @Test
+    fun `The cosine similaratiy should be same in the three vectors with diferent size`() = runBlocking {
+        val expected = 0.2859431317947984
+        val y = arrayOf(2, 1, 3)
+        val z = arrayOf(1, 3, 2)
+        val x = arrayOf(1, 3, 2, 5)
+        val cosineSimilarityValue = CosineSimilarity.calculate(arrayOf(y, z, x))
+        assertEquals(expected, cosineSimilarityValue)
     }
 }
