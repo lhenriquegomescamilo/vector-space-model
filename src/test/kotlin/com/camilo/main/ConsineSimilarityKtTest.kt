@@ -54,4 +54,12 @@ class ConsineSimilarityKtTest {
         val cosineSimilarityValue = CosineSimilarity.calculate(arrayOf(y, z, x))
         assertEquals(expected, cosineSimilarityValue)
     }
+
+    @Test
+    fun `Calculate consine from 1 dimension`() = runBlocking {
+        val expected = 1.0
+        val y = arrayOf(2, 1, 3)
+        val cosineSimilarityValue = CosineSimilarity.calculate(arrayOf(y))
+        assertEquals(expected, cosineSimilarityValue)
+    }
 }

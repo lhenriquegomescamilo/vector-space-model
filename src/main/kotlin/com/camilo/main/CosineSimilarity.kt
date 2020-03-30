@@ -1,22 +1,25 @@
 package com.camilo.main
 
-import com.sun.javaws.exceptions.InvalidArgumentException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import java.lang.Math.sqrt
-import java.util.*
+import kotlin.math.cos
 
 @Suppress("UNCHECKED_CAST")
 class CosineSimilarity {
     companion object {
         suspend fun calculate(vectors: Array<Array<Int>>) = coroutineScope {
-            if (vectors.size <= 1) throw InvalidArgumentException(arrayOf("This values has be two vectors"))
-            vectors.map { async { calculoSqrt(it) } }.awaitAll()
-            val sumA = calculatingValue(vectors.clone())
-            val baseOfCalc = vectors.map { async { calculoSqrt(it) } }.awaitAll()
-            val result = baseOfCalc.reduce { acc: Double, current: Double -> acc * current }
-            sumA.div(result)
+            if (vectors.size > 1) {
+                vectors.map { async { calculoSqrt(it) } }.awaitAll()
+                val sumA = calculatingValue(vectors.clone())
+                val baseOfCalc = vectors.map { async { calculoSqrt(it) } }.awaitAll()
+                val result = baseOfCalc.reduce { acc: Double, current: Double -> acc * current }
+                sumA.div(result)
+            } else {
+                cos(0.0)
+            }
+
         }
 
         private suspend fun calculatingValue(vectors: Array<Array<Int>>) = coroutineScope {
