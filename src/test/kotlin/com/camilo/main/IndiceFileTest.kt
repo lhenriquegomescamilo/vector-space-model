@@ -30,7 +30,7 @@ class IndiceFileTest {
     @Test
     fun `should read words of file`() = runBlocking {
         val indiceFile = IndiceFileGenerator()
-        val expectedWords = 5
+        val expectedWords = 4
         val file = readFile("files/document_01.txt")
         val quantityOfWords = indiceFile.readWordsOfFile(file)
         Assertions.assertEquals(expectedWords, quantityOfWords.size)
@@ -46,7 +46,7 @@ class IndiceFileTest {
     fun `Should create indices for documento 01`() = runBlocking {
         val generator = IndiceFileGenerator()
         val file = readFile("files/document_01.txt")
-        val indicesExpected = hashMapOf("apple" to 4, "banana" to 1)
+        val indicesExpected = hashMapOf("apple" to 3, "banana" to 1)
         val indices = generator.createIndiceForFile(file)
         Assertions.assertEquals(indicesExpected, indices)
 
